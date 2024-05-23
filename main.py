@@ -1,20 +1,12 @@
 import tkinter as tk
 from tkinter import ttk
 
-from translator import get_target_lang_codes, translate_text
+from translator import get_target_lang_codes
+from utils.handle_translation import handle_translation
 from utils.tk.center_window import center_window
 from utils.tk.fill_the_screen_with_window import fill_the_screen_with_window
 from utils.tk.make_window_resizable import make_window_resizable
 from utils.tk.update_title_on_change import update_title_on_change
-
-
-def handle_translation():
-    text = input_state.get()
-    target_lang_code = target_lang_var.get()
-    result = translate_text(text, target_lang_code)
-    print(result)
-    output_text_var.set(result)
-
 
 root = tk.Tk()
 fill_the_screen_with_window(root)
@@ -47,7 +39,7 @@ target_language_dropdown.pack(side="left", padx=10, pady=(10, 0))
 target_language_dropdown.current(0)  # Ustawienie domyślnej wartości
 
 # Przycisk Tłumacz
-translate_button = tk.Button(options_frame, text="Tłumacz", command=handle_translation, width=10)
+translate_button = tk.Button(options_frame, text="Tłumacz", command=lambda: handle_translation(input_state, target_lang_var, output_text_var), width=10)
 translate_button.pack(side="left", padx=(10, 0), pady=(10, 0))
 
 # Zmienna StringVar do przechowywania tekstu wyjściowego
