@@ -14,20 +14,17 @@ center_window(root)
 make_window_resizable(root)
 update_title_on_change(root)
 
-# Stylizacja ramki
 frame_style = {"borderwidth": 2, "relief": "groove", "background": "#f0f0f0", "padx": 10, "pady": 10}
 
 input_state = tk.StringVar(root)
 target_lang_var = tk.StringVar(root)
 
-# Ramka dla pola tekstowego do wprowadzania tekstu
 input_frame = tk.Frame(root, **frame_style)
 input_frame.pack(fill="x", padx=10, pady=10)
 
 text_input = tk.Entry(input_frame, textvariable=input_state, width=50, bd=0, bg="black", fg="white", font=("Arial", 12))
 text_input.pack(fill="both", expand=True, padx=10, pady=(10, 0))
 
-# Ramka dla listy rozwijanej i przycisku
 options_frame = tk.Frame(root, **frame_style)
 options_frame.pack(fill="x", padx=10, pady=(10, 0))
 
@@ -39,7 +36,6 @@ target_language_dropdown.current(0)
 translate_button = tk.Button(options_frame, text="Tłumacz", command=lambda: handle_translation(input_state, target_lang_var, output_text_var), width=10, font=("Arial", 12))
 translate_button.pack(side="left", padx=(10, 0), pady=(10, 0))
 
-# Ramka dla pola tekstowego z wynikiem
 result_frame = tk.Frame(root, **frame_style)
 result_frame.pack(fill="both", expand=True, padx=10, pady=(10, 0))
 
