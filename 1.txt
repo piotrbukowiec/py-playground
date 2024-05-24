@@ -1,0 +1,1 @@
+Walidacja numerów PESEL, NIP i REGON opiera się na odpowiednich algorytmach, które sprawdzają poprawność cyfr kontrolnych. Dla PESEL jest to suma kontrolna z ostatniej cyfry, dla NIP - weryfikacja poprzez przypisane wagi do poszczególnych cyfr, a dla REGON - podobnie jak w NIP, ale z innym zestawem wag i dłuższym numerem.
